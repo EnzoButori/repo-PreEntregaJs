@@ -1,6 +1,7 @@
 /* Menu de interaccion con el usuario por consola*/
 
 function gracias(){
+    
     alert("Gracias por su compra, vuelva pronto!")
 }
 
@@ -30,7 +31,7 @@ function productos() {
                 console.log("\tAuriculares:\n- AirPods.\n- AirPods 2.\n- AirPods 3.\n- AirPods Pro.\n- AirPods Pro 2.\n- AirPods Max.")
                 volverAlMenu = confirm("¿Desea volver al menú?")
             } while (volverAlMenu == false)
-        }else{
+        }else if (numero == 0){
             menu()
         }
     } while (salir == false)
@@ -46,6 +47,12 @@ function canje(){
 
     menu()
 
+}
+
+function compra(){
+    const carrito = [];
+
+    console.log("¿Que desea comprar?")
 }
 
 function menu () {
