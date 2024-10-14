@@ -6,7 +6,7 @@ function gracias(){
 }
 
 function productos() {
-    let salir = false
+    const salir = false
     do {
         console.log("\tProductos Disponibles:\n1. Iphones.\n2. Macbooks.\n3. Auriculares.\n0. Volver al menu principal")
         let numero = parseInt(prompt("Seleccione una opción"))
@@ -50,14 +50,24 @@ function canje(){
 }
 
 function compra(){
-    const carrito = [];
+    const carrito = []
+    let terminar = false
+    console.log("\tPor favor, llene su carrito ;)")
 
-    console.log("¿Que desea comprar?")
+    do {
+        let producto = prompt("Ingrese el nombre del producto a comprar: ")
+        if (producto) {
+            carrito.push(producto.toLowerCase())
+        }
+        terminar = confirm("¿Desea terminar su carrito?")
+    } while (!terminar)
+    
+    console.log("Su carrito de compras contiene:", carrito)
 }
 
 function menu () {
     console.log("\tMenu de Opciones.\n1. Productos Disponibles.\n2. Plan Canje.\n3. Realizar Compra.\n0. Finalizar.")
-    let numero = parseInt(prompt("Seleccione una opcion"))
+    const numero = parseInt(prompt("Seleccione una opcion"))
     switch (numero){
         case 1:
             productos()
@@ -66,10 +76,15 @@ function menu () {
             canje()
             break;
         case 3:
-
+            compra()
             break;
         case 0:
             gracias()
+            break;
+        default:
+            alert("Porfavor seleccione una opcion")
+            break;
     }
 }
-menu()
+
+menu();
