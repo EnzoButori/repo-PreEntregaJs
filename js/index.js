@@ -53,20 +53,6 @@ function canje() {
 
 function compra() {
     const carrito = [];
-    const productosValidos = [
-        "iphone 14",
-        "iphone 14 pro",
-        "iphone 14 promax",
-        "macbook air",
-        "macbook pro",
-        "airpods",
-        "airpods 2",
-        "airpods 3",
-        "airpods pro",
-        "airpods pro 2",
-        "airpods max"
-    ];
-
     let terminar = false;
     console.clear();
     console.log("\tPor favor, llene su carrito ;)");
@@ -75,7 +61,24 @@ function compra() {
         let producto = prompt("Ingrese el nombre del producto a comprar: ");
         if (producto) {
             const productoLower = producto.toLowerCase();
-            if (productosValidos.includes(productoLower)) {
+            let esValido = false;
+
+            // Comprobamos si el producto ingresado es válido
+            if (productoLower === "iphone 14" || 
+                productoLower === "iphone 14 pro" || 
+                productoLower === "iphone 14 promax" || 
+                productoLower === "macbook air" || 
+                productoLower === "macbook pro" || 
+                productoLower === "airpods" || 
+                productoLower === "airpods 2" || 
+                productoLower === "airpods 3" || 
+                productoLower === "airpods pro" || 
+                productoLower === "airpods pro 2" || 
+                productoLower === "airpods max") {
+                esValido = true;
+            }
+
+            if (esValido) {
                 carrito.push(productoLower);
                 console.log("Producto agregado al carrito:", producto);
                 console.log("Carrito actual:", carrito);
@@ -85,7 +88,7 @@ function compra() {
         }
         terminar = confirm("¿Desea terminar su carrito?");
     } while (!terminar);
-    
+
     console.log("Su carrito de compras final contiene:", carrito);
 }
 
