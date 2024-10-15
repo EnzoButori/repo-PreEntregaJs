@@ -62,8 +62,6 @@ function compra() {
         if (producto) {
             const productoLower = producto.toLowerCase();
             let esValido = false;
-
-            // Comprobamos si el producto ingresado es válido
             if (productoLower === "iphone 14" || 
                 productoLower === "iphone 14 pro" || 
                 productoLower === "iphone 14 promax" || 
@@ -98,7 +96,7 @@ function menu() {
         console.clear();
         console.log("\tMenú de Opciones.\n1. Productos Disponibles.\n2. Plan Canje.\n3. Realizar Compra.\n0. Finalizar.");
         const numero = parseInt(prompt("Seleccione una opción"));
-
+        //Menu principal
         switch (numero) {
             case 1:
                 productos();
